@@ -7,11 +7,13 @@ import { siteConfig } from '@/config/site';
 import { title, subtitle } from '@/components/primitives';
 import AboutLayout from './about/layout';
 import AboutPage from './about/page';
+import BlogPage from './blog/page';
 
 export default function Home() {
   return (
-    <section className='flex flex-col items-center justify-center mt-2'>
+    <section className='flex flex-col items-center justify-center mt-2 w-full'>
       <AboutPage />
+      <BlogPage />
     </section>
   );
 }

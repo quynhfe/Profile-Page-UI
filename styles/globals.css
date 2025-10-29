@@ -6,6 +6,7 @@
   --radius-xxl: 14px;
   --radius-2xxl: 18px;
   --my-gap: 14px;
+  --text-4xxl: 40px;
 
   --color-black-20: #202020;
   --color-black-23: #232323;
@@ -21,6 +22,7 @@
   --color-blue: #4193fe;
   --color-green: #32bb70;
 
+  --color-button-purple: #5e53f5;
   --color-stroke-gradient-dark: linear-gradient(
     135deg,
     rgba(62, 62, 62, 1) 0%,
