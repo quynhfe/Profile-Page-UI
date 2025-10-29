@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@config "../tailwind.config.js";
+@theme {
+  --radius-xxl: 14px;
+  --radius-2xxl: 18px;
+  --my-gap: 14px;
+
+  --color-black-20: #202020;
+  --color-black-23: #232323;
+  --color-black-24: #242424;
+  --color-black-26: #262626;
+
+  --color-border-avt: #414141;
+  --color-border-logo: #ebebfd;
+  --color-icon-notify: #ff3a3a;
+
+  --color-pink: #ff4cac;
+  --color-purple: #7054fe;
+  --color-blue: #4193fe;
+  --color-green: #32bb70;
+
+  --color-stroke-gradient-dark: linear-gradient(
+    135deg,
+    rgba(62, 62, 62, 1) 0%,
+    rgba(45, 44, 47, 0) 100%
+  );
+
+  --color-bg-gradient-green: rgba(145, 241, 111, 1);
+  --color-bg-gradient-black: rgba(143, 143, 143, 0);
+}
+
+@layer {
+  .icon-header {
+    @apply rounded-xl bg-black-26 w-fit h-fit p-2 flex items-center justify-center gap-2.5;
+
+    @apply relative z-10;
+  }
+
+  .icon-header::after {
+    content: '';
+    @apply absolute inset-0 rounded-xl;
+    background: var(--color-stroke-gradient-dark);
+    padding: 1px;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .span-icon {
+    @apply w-3.25 h-3.25 flex justify-center items-center;
+  }
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  /* background: var(--background); */
+  /* color: var(--foreground); */
+  font-family:
+    Plus Jakarta Sans,
+    sans-serif;
+}
