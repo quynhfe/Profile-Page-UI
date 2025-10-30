@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap'); */
 @import 'tailwindcss';
 
 @config "../tailwind.config.js";
@@ -14,21 +14,31 @@
   --color-black-26: #262626;
 
   --color-border-avt: #414141;
-  --color-border-logo: #ebebfd;
+  --color-border-user: #2b2826;
+  --color-border-logo: #ebebfd3d;
   --color-icon-notify: #ff3a3a;
+  --color-border-grey: #f5f5f5;
 
   --color-pink: #ff4cac;
   --color-purple: #7054fe;
   --color-blue: #4193fe;
   --color-green: #32bb70;
 
+  --bg-green: #66d2a1;
+  --bg-grey: #f8f8f8;
+
   --color-button-purple: #5e53f5;
   --color-stroke-gradient-dark: linear-gradient(
     135deg,
-    rgba(62, 62, 62, 1) 0%,
-    rgba(45, 44, 47, 0) 100%
+    rgba(62, 62, 62, 1),
+    rgba(45, 44, 47, 0)
   );
 
+  --color-stroke-gradient-green: linear-gradient(
+    135deg,
+    rgba(190, 242, 218, 1),
+    rgba(26, 188, 114, 0)
+  );
   --color-bg-gradient-green: rgba(145, 241, 111, 1);
   --color-bg-gradient-black: rgba(143, 143, 143, 0);
 }

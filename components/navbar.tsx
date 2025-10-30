@@ -8,8 +8,10 @@ import {
 import { Avatar } from '@heroui/avatar';
 import { ThemeSwitch } from '@/components/theme-switch';
 import { BellIcon, Logo, OnlineIcon } from './icons';
-import User from './avatar';
+import User from './user';
 import { Badge } from '@heroui/badge';
+import IconBox from './icon-box';
+import { AvatarCus } from './avatar';
 export const Navbar = () => {
   return (
     <HeroUINavbar
@@ -38,21 +40,20 @@ export const Navbar = () => {
           <ThemeSwitch />
           <div className='w-2.5 h-0 -rotate-90 opacity-20 rounded-2xl border border-white'></div>
           <NavbarItem className='icon-header'>
-            <div className='relative w-3.5 h-3.5 flex justify-center items-center'>
+            <IconBox className='relative w-3.5 h-3.5'>
               <BellIcon />
               <span className='absolute -top-0.25 -right-0.25'>
                 <OnlineIcon size={7.462184906005859} />
               </span>
-            </div>
+            </IconBox>
           </NavbarItem>
-          <Avatar
+          <AvatarCus
             name='Hoa'
             radius='sm'
-            showFallback
-            style={{ backgroundColor: 'var(--color-blue)' }}
-            classNames={{
-              base: 'text-white size-7.5 border border-black-24',
-            }}
+            background='bg-blue'
+            className='text-white border'
+            size={7.5}
+            border='border-black-24'
           />
         </NavbarContent>
       </NavbarContent>

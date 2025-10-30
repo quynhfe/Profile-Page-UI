@@ -6,7 +6,7 @@ import { SwitchProps, useSwitch } from '@heroui/switch';
 import { useTheme } from 'next-themes';
 import { useIsSSR } from '@react-aria/ssr';
 import clsx from 'clsx';
-
+import IconBox from './icon-box';
 import { DarkModeIcon } from '@/components/icons';
 
 export interface ThemeSwitchProps {
@@ -55,9 +55,9 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         className={slots.wrapper({
           class: clsx(['icon-header'], classNames?.wrapper),
         })}>
-        <div className='w-3.5 h-3.5 flex justify-center items-center'>
+        <IconBox className='w-3.5 h-3.5'>
           {!isSelected || isSSR ? <DarkModeIcon /> : <DarkModeIcon />}
-        </div>
+        </IconBox>
       </div>
     </Component>
   );

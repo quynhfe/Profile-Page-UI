@@ -1,56 +1,79 @@
-'use client';
-
 import React from 'react';
-import { Avatar, AvatarGroup } from '@heroui/avatar';
+import {
+  Avatar as HeroAvatar,
+  AvatarProps as HeroAvatarProps,
+} from '@heroui/avatar';
 
-function User() {
-  const users = [
-    { id: 1, name: 'James', color: 'var(--color-pink)' },
-    { id: 2, name: 'Amelia', color: 'var(--color-purple)' },
-    { id: 3, name: 'Henry', color: 'var(--color-blue)' },
-    { id: 4, name: 'Fiona', color: 'var(--color-green)' },
-    { id: 5, name: 'Lucas' },
-    { id: 6, name: 'Sophia' },
-    { id: 7, name: 'Ethan' },
-    { id: 8, name: 'Mia' },
-    { id: 9, name: 'Noah' },
-    { id: 10, name: 'Olivia' },
-  ];
+type AvatarSize = 'sm' | 'md' | 'lg' | number;
+type AvatarBorder = 'fallback' | 'user' | 'none' | string;
+type AvatarRadius = 'sm' | 'md' | 'lg' | string;
 
-  return (
-    <AvatarGroup
-      max={4}
-      total={3}
-      renderCount={(count) => (
-        <Avatar
-          name={`${count} +`}
-          radius='sm'
-          showFallback
-          style={{ backgroundColor: 'var(--color-black-23)' }}
-          classNames={{
-            base: 'text-white size-7.5',
-          }}
-        />
-      )}>
-      {users.map((user) => (
-        <Avatar
-          style={{
-            backgroundColor: user.color
-              ? `${user.color}`
-              : 'var(--color-black-23)',
-          }}
-          radius='sm'
-          key={user.id}
-          showFallback
-          name={user.name}
-          src='https://i'
-          classNames={{
-            base: 'text-white size-7.5 border border-border-avt',
-          }}
-        />
-      ))}
-    </AvatarGroup>
-  );
+interface CustomAvatarProps extends Omit<HeroAvatarProps, 'radius' | 'size'> {
+  size?: AvatarSize;
+  border?: AvatarBorder;
+  radius?: AvatarRadius;
+  background?: string | 'none';
+  className?: string;
 }
 
-export default User;
+export const AvatarCus: React.FC<CustomAvatarProps> = ({
+  size = 'md',
+  border = 'none',
+  radius = 'md',
+  background = 'none',
+  className = '',
+  classNames,
+  style,
+  ...props
+}) => {
+  const getSizeStyle = (): React.CSSProperties => {
+    if (typeof size === 'number') {
+      const px = `${size * 4}px`;
+      return { width: px, height: px, fontSize: `calc(${px}/2)` };
+    }
+    return {};
+  };
+
+  const getBorderClass = (): string => {
+    if (
+      typeof border === 'string' &&
+      !['fallback', 'user', 'none'].includes(border)
+    )
+      return border;
+    switch (border) {
+      case 'fallback':
+        return 'border border-border-avt';
+      case 'user':
+        return 'border border-border-user';
+      default:
+        return 'border-none';
+    }
+  };
+
+  const isTailwindBg = background?.startsWith('bg-');
+  const backgroundClass = isTailwindBg ? background : '';
+  const backgroundStyle =
+    !isTailwindBg && background !== 'none'
+      ? { backgroundColor: background }
+      : {};
+
+  const combinedClassName =
+    `${getBorderClass()} ${backgroundClass} ${className}`.trim();
+
+  const mergedClassNames = {
+    ...classNames,
+    base: `${classNames?.base || ''}`.trim(),
+  };
+
+  return (
+    <HeroAvatar
+      {...props}
+      showFallback
+      size={typeof size === 'string' ? size : undefined}
+      radius={radius as any}
+      className={combinedClassName}
+      classNames={mergedClassNames}
+      style={{ ...getSizeStyle(), ...backgroundStyle, ...style }}
+    />
+  );
+};

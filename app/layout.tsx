@@ -8,7 +8,7 @@ import { Providers } from './providers';
 import { siteConfig } from '@/config/site';
 import { fontPlus } from '@/config/fonts';
 import { Navbar } from '@/components/navbar';
-import User from '@/components/avatar';
+import User from '@/components/user';
 
 export const metadata: Metadata = {
   title: {
@@ -47,8 +47,8 @@ export default function RootLayout({
           <div className='relative flex flex-col h-screen'>
             {/* <Navbar userAvatar={<User />} /> */}
             <Navbar />
-            <main className='2xl:container mx-auto 2xl:max-w-7xl pt-16  flex-grow'>
-              {children}
+            <main className=' pt-16 px-14 flex-grow'>
+              <div className='container mx-auto max-w-7xl'>{children}</div>
             </main>
             <footer className='w-full flex items-center justify-center py-3'>
               {/* <Link
