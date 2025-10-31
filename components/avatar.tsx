@@ -44,7 +44,7 @@ export const AvatarCus: React.FC<CustomAvatarProps> = ({
       case 'fallback':
         return 'border border-border-avt';
       case 'user':
-        return 'border border-border-user';
+        return 'border border-border';
       default:
         return 'border-none';
     }

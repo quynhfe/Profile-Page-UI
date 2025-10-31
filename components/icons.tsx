@@ -296,9 +296,9 @@ export const PlusIcon: React.FC<IconSvgProps> = ({
     <path
       d='M6.66671 0.833344V12.5M0.833374 6.66668H12.5'
       stroke='white'
-      stroke-width='1.66667'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.66667'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );

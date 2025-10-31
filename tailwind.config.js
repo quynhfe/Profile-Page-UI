@@ -10,17 +10,31 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-sans)'],
-        mono: ['var(--font-mono)'],
-      },
-      backgroundColor: {
-        'bg-gradient':
-          'linear-gradient(180deg, rgba(145,241,111,1) 100%, rgba(143,143,143,0) 0%)',
+        plus: ['var(--font-plus)'],
       },
     },
   },
   darkMode: 'class',
-  plugins: [heroui()],
+  plugins: [
+    heroui({
+      themes: {
+        dark: {
+          colors: {
+            foreground: '#fff',
+            background: '#000000',
+            border: '#2b2826',
+          },
+        },
+        light: {
+          colors: {
+            background: '#ffffff',
+            foreground: '#000000',
+            border: '#ffffff',
+          },
+        },
+      },
+    }),
+  ],
 };
 
 module.exports = config;

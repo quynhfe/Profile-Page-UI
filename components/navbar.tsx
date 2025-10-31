@@ -5,11 +5,9 @@ import {
   NavbarItem,
   NavbarBrand,
 } from '@heroui/navbar';
-import { Avatar } from '@heroui/avatar';
 import { ThemeSwitch } from '@/components/theme-switch';
 import { BellIcon, Logo, OnlineIcon } from './icons';
 import User from './user';
-import { Badge } from '@heroui/badge';
 import IconBox from './icon-box';
 import { AvatarCus } from './avatar';
 export const Navbar = () => {
@@ -19,7 +17,7 @@ export const Navbar = () => {
       position='sticky'
       height={48}
       classNames={{
-        base: 'top-5 self-center w-fit flex justify-between  bg-black/80 rounded-2xl px-1.5',
+        base: 'container 2xl:mx-auto top-5 self-center w-fit flex justify-between  bg-header rounded-2xl px-1.5',
         wrapper: 'p-0',
         content: 'p-0',
       }}>
@@ -27,9 +25,9 @@ export const Navbar = () => {
         className='w-175 p-0'
         justify='center'>
         <div className='flex justify-start items-center w-122 gap-(--my-gap) bg-gradient-to-r from-bg-gradient-black/20 to-bg-gradient-green/20 rounded-2xl py-1.5'>
-          <div className=' bg-black-20 rounded-xxl w-9 h-9 flex justify-center items-center '>
+          <IconBox className=' bg-black-20 rounded-xxl w-9 h-9'>
             <Logo />
-          </div>
+          </IconBox>
           <p className='font-medium text-sm text-white'>Back to Dashboard</p>
           <User />
         </div>

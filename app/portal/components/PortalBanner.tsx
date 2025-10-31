@@ -3,14 +3,13 @@ import HeroImage from '@/assets/hero.png';
 import { Badge } from '@heroui/badge';
 import { LogoHero } from '@/components/icons';
 import IconBox from '@/components/icon-box';
-export default function AboutPage() {
+export default function PortalBanner() {
   return (
-    <div className='relative '>
-      <div className='w-full'>
-        <Image
-          src={HeroImage.src}
-          alt='background hero'></Image>
-      </div>
+    <div className='relative w-full '>
+      <Image
+        className='w-full h-full object-cover'
+        src={HeroImage.src}
+        alt='background hero '></Image>
       <div className='absolute z-10 top-39.75 left-17'>
         <Badge
           isOneChar

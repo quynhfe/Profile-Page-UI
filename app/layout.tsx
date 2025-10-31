@@ -8,7 +8,6 @@ import { Providers } from './providers';
 import { siteConfig } from '@/config/site';
 import { fontPlus } from '@/config/fonts';
 import { Navbar } from '@/components/navbar';
-import User from '@/components/user';
 
 export const metadata: Metadata = {
   title: {
@@ -40,26 +39,16 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          'min-h-screen text-foreground bg-background font-sans antialiased',
+          'min-h-screen text-foreground bg-background font-plus antialiased',
           fontPlus.variable,
         )}>
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className='relative flex flex-col h-screen'>
-            {/* <Navbar userAvatar={<User />} /> */}
             <Navbar />
-            <main className=' pt-16 px-14 flex-grow'>
-              <div className='container mx-auto max-w-7xl'>{children}</div>
+            <main className=' pt-16 px-14 flex-grow w-full'>
+              <div className='container 2xl:mx-auto max-w-7xl'>{children}</div>
             </main>
-            <footer className='w-full flex items-center justify-center py-3'>
-              {/* <Link
-                isExternal
-                className='flex items-center gap-1 text-current'
-                href='https://heroui.com?utm_source=next-app-template'
-                title='heroui.com homepage'>
-                <span className='text-default-600'>Powered by</span>
-                <p className='text-primary'>HeroUI</p>
-              </Link> */}
-            </footer>
+            <footer className='w-full flex items-center justify-center py-3'></footer>
           </div>
         </Providers>
       </body>

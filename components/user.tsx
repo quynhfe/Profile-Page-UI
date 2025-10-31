@@ -38,7 +38,7 @@ function User() {
           key={user.id}
           name={user.name}
           size={7.5}
-          className='text-white'
+          classNames={{ base: 'text-white' }}
           border='fallback'
           src='https://i'
         />
