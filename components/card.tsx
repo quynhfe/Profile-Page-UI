@@ -44,9 +44,11 @@ export default function Card({
 
       <div className='w-full h-full relative bg-white dark:bg-header rounded-2xl shadow-lg overflow-hidden flex flex-col'>
         <div className='absolute top-4 left-4 right-4 z-10 flex items-center justify-between'>
-          {isRecording && (
-            <div className='w-3 h-3 bg-record rounded-[4px] animate-pulse'></div>
-          )}
+          <div
+            className={`w-3 h-3 rounded-[4px] ${
+              isRecording ? 'bg-record animate-pulse' : 'bg-transparent'
+            }`}
+          />
 
           <div className='flex items-center space-x-2'>
             {collaborators.map((collaborator, index) => (
@@ -71,7 +73,7 @@ export default function Card({
           <div className='opacity-70 absolute bottom-0 inset-0 bg-gradient-to-t from-black  to-black/0'></div>
         </div>
 
-        <div className='absolute bottom-0 left-0 right-0 p-4 text-white flex flex-col space-y-0.5'>
+        <div className='absolute bottom-0 left-0 right-0 p-4 text-white flex flex-col gap-1.25'>
           <div className='flex flex-col space-y-0.5'>
             <p className='text-lg font-medium leading-[150%] m-0 line-clamp-2'>
               {title}
