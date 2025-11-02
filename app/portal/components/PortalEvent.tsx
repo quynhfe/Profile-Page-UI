@@ -60,8 +60,8 @@ export default function PortalEvent() {
           format: ['virtual'],
           image: Pic1.src,
           host: {
-            id: 'user-5',
-            name: 'Alex Rivera',
+            id: 'user-1',
+            name: 'Tom Davis',
             avatar: Pic1.src,
           },
           speakers: [
@@ -97,8 +97,8 @@ export default function PortalEvent() {
           format: ['in-person'],
           image: Pic1.src,
           host: {
-            id: 'user-9',
-            name: 'Linda Martinez',
+            id: 'user-1',
+            name: 'Tom Davis',
             avatar: Pic1.src,
           },
           speakers: [],
@@ -115,8 +115,8 @@ export default function PortalEvent() {
           format: ['virtual'],
           image: Pic1.src,
           host: {
-            id: 'user-10',
-            name: 'James Wilson',
+            id: 'user-1',
+            name: 'Tom Davis',
             avatar: Pic1.src,
           },
           speakers: [
@@ -139,8 +139,8 @@ export default function PortalEvent() {
           format: ['virtual'],
           image: Pic1.src,
           host: {
-            id: 'user-12',
-            name: 'Robert Chen',
+            id: 'user-1',
+            name: 'Tom Davis',
             avatar: Pic1.src,
           },
           speakers: [

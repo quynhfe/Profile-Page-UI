@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Pic from '@/assets/pic-3.jpg';
 import { Badge } from '@heroui/badge';
 import { AvatarCus } from '@/components/avatar';
@@ -6,7 +7,10 @@ import { ClockIcon, PlusCircleIcon, RocketIcon } from '@/components/icons';
 import IconBox from '@/components/icon-box';
 import { ScrollShadow } from '@heroui/scroll-shadow';
 import { Calendar } from '@heroui/calendar';
+import CustomCalendar from '@/components/custom-calendar';
+import { parseDate } from '@internationalized/date';
 export default function PortalActivity() {
+  const [activeTab, setActiveTab] = useState('upcoming');
   const notifications = [
     {
       id: 1,
@@ -111,7 +115,7 @@ export default function PortalActivity() {
   ];
   return (
     <div className=' mt-16.75 flex flex-col gap-5 w-full'>
-      <div className='flex flex-col overflow-hidden relative z-0 w-full gap-4 bg-white dark:bg-black h-72.75  rounded-2xl p-5  border border-border-grey dark:border-[#1F1F1F]'>
+      <div className='flex flex-col overflow-hidden relative z-0 w-full gap-4 bg-white dark:bg-[#111111] h-72.75  rounded-2xl p-5  border border-border-grey dark:border-[#1F1F1F]'>
         <p className=' font-medium text-base '>Recent activity</p>
 
         <ScrollShadow
@@ -181,17 +185,80 @@ export default function PortalActivity() {
         <div className='absolute z-10 h-29.75 w-81 transfrom -translate-x-5.5 bottom-0 bg-gradient-to-t dark:from-black dark:to-black/0 from-white to-white/0'></div>
       </div>
 
-      <div className='text-nowrap leading-[100%] tracking-tight flex h-fit w-full justify-between items-center px-5 py-4 bg-white dark:bg-black rounded-2xl  border border-border-grey dark:border-[#1F1F1F]'>
+      <div className='text-nowrap leading-[100%] tracking-tight flex h-fit w-full justify-between items-center px-5 py-4 bg-white dark:bg-[#111111] rounded-2xl  border border-border-grey dark:border-[#1F1F1F]'>
         <IconBox className='size-4'>
           <ClockIcon />
         </IconBox>
         <p className='opacity-50'>Time in your location</p>
         <p className='font-medium text-base'>1:14 PM</p>
       </div>
-      <Calendar
-        aria-label='Date (Uncontrolled)'
-        // defaultValue={parseDate('2020-02-03')}
-      />
+      <div className='relative z-0'>
+        <div className='absolute z-10 top-16 w-63 left-4 flex flex-col gap-3'>
+          <div className=' w-full left-4 flex dark:bg-white/5 bg-border-grey dark:inset-shadow-[2px_2px_4px_0_rgba(0,0,0,0.25)] rounded-[10px] p-1'>
+            <button
+              onClick={() => setActiveTab('upcoming')}
+              className={`flex-1 py-2.5 px-4 rounded-xl text-sm font-medium transition-all ${
+                activeTab === 'upcoming'
+                  ? 'dark:bg-[#3E3E3E66] bg-white'
+                  : ' dark:hover:text-white'
+              }`}>
+              Upcoming
+            </button>
+            <button
+              onClick={() => setActiveTab('past')}
+              className={`flex-1 py-2.5 px-4 rounded-xl text-sm font-medium transition-all ${
+                activeTab === 'past'
+                  ? 'dark:bg-[#3E3E3E66] bg-white'
+                  : ' dark:hover:text-white'
+              }`}>
+              Past Event
+            </button>
+          </div>
+          <div className='flex h-8.75 w-full justify-center items-center'>
+            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
+              Mo
+            </p>
+            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
+              Tu
+            </p>
+            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
+              We
+            </p>
+            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
+              Th
+            </p>
+            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
+              Fr
+            </p>
+            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
+              Sat
+            </p>
+            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
+              Su
+            </p>
+          </div>
+        </div>
+
+        <Calendar
+          className='flex justify-center p-4'
+          aria-label='Date (firstDayOfWeek)'
+          firstDayOfWeek='mon'
+          classNames={{
+            base: 'flex p-0 w-full bg-white dark:bg-[#111111] rounded-2xl  border border-border-grey dark:border-[#1F1F1F] shadow-none',
+            title: 'text-black dark:text-white h-8 flex items-center',
+            prevButton: 'text-black dark:text-white',
+            nextButton: 'text-black dark:text-white',
+            cellButton:
+              ' text-sm data-[selected=true]:bg-button-purple data-[outside-month=true]:text-[#868687] hover:bg-button-purple rounded-[8px]',
+            headerWrapper: 'bg-inherit h-34.25 flex items-start p-0',
+            gridWrapper: '',
+            gridHeader: 'hidden',
+            grid: 'p-0',
+            content: 'p-0 m-0',
+            gridBody: 'p-0',
+          }}
+        />
+      </div>
     </div>
   );
 }
