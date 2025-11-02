@@ -16,7 +16,7 @@ export default function PortalActivity() {
         name: 'Amalia',
         avatar: Pic.src,
       },
-      action: 'Awarded badge during event',
+      action: 'awarded badge during event',
       time: '10mins',
       badgeEvent: 'rocket',
     },
@@ -26,7 +26,7 @@ export default function PortalActivity() {
         name: 'Hoa',
         avatar: 'https://invalid-url.com/avatar.jpg',
       },
-      action: 'Awarded badge during event',
+      action: 'awarded badge during event',
       time: '10mins',
       badgeEvent: 'rocket',
     },
@@ -36,7 +36,7 @@ export default function PortalActivity() {
         name: 'Amalia',
         avatar: Pic.src,
       },
-      action: 'Awarded badge during event',
+      action: 'awarded badge during event',
       time: '10mins',
       badgeEvent: 'plus',
     },
@@ -46,7 +46,7 @@ export default function PortalActivity() {
         name: 'Amalia',
         avatar: Pic.src,
       },
-      action: 'Awarded badge during event',
+      action: 'awarded badge during event',
       time: '10mins',
       badgeEvent: 'rocket',
     },
@@ -171,7 +171,7 @@ export default function PortalActivity() {
               )}
               <p className='leading-[100%]'>
                 <span className='text-base leading-[100%]'>
-                  {notification.action}
+                  {notification.user.name} {notification.action}
                 </span>
                 <span className='dark:text-white/40 text-black/40'>
                   {notification.time}
