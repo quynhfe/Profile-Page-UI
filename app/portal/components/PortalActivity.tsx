@@ -7,8 +7,6 @@ import { ClockIcon, PlusCircleIcon, RocketIcon } from '@/components/icons';
 import IconBox from '@/components/icon-box';
 import { ScrollShadow } from '@heroui/scroll-shadow';
 import { Calendar } from '@heroui/calendar';
-import CustomCalendar from '@/components/custom-calendar';
-import { parseDate } from '@internationalized/date';
 export default function PortalActivity() {
   const [activeTab, setActiveTab] = useState('upcoming');
   const notifications = [
@@ -249,7 +247,7 @@ export default function PortalActivity() {
             prevButton: 'text-black dark:text-white',
             nextButton: 'text-black dark:text-white',
             cellButton:
-              ' text-sm data-[selected=true]:bg-button-purple data-[outside-month=true]:text-[#868687] hover:bg-button-purple rounded-[8px]',
+              ' text-sm w-8.75 data-[selected=true]:bg-button-purple data-[outside-month=true]:text-[#868687] hover:bg-button-purple rounded-[8px]',
             headerWrapper: 'bg-inherit h-34.25 flex items-start p-0',
             gridWrapper: '',
             gridHeader: 'hidden',
