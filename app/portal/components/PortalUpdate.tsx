@@ -66,7 +66,7 @@ export const tripCardsData = [
 ];
 export default function PortalUpdate() {
   return (
-    <div className='mx-16 mt-16 flex flex-col justify-center items-start w-224.25 space-y-6'>
+    <div className='  flex flex-col justify-center items-start  space-y-8.75'>
       <p className='font-medium text-20'>Recently updated</p>
       <div className='grid grid-cols-4 gap-5'>
         {tripCardsData.map((trip) => (

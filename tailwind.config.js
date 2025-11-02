@@ -20,14 +20,14 @@ const config = {
       themes: {
         dark: {
           colors: {
-            foreground: '#fff',
+            foreground: '#ffffff',
             background: '#000000',
             border: '#2b2826',
           },
         },
         light: {
           colors: {
-            background: '#ffffff',
+            background: '#FBFBFB',
             foreground: '#000000',
             border: '#ffffff',
           },

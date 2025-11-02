@@ -10,6 +10,7 @@ interface GradientBorderProps {
   children?: React.ReactNode;
   rounded?: string;
   padding?: string;
+  borderWidth?: string;
 }
 
 const GradientBorder: React.FC<GradientBorderProps> = ({
@@ -19,6 +20,7 @@ const GradientBorder: React.FC<GradientBorderProps> = ({
   children,
   rounded = 'rounded-xl',
   padding = 'p-0',
+  borderWidth = '1px',
 }) => {
   const variantGradient =
     variant === 'dark'
@@ -43,7 +45,7 @@ const GradientBorder: React.FC<GradientBorderProps> = ({
         className={clsx('absolute inset-0 pointer-events-none', rounded)}
         style={{
           background: gradient || variantGradient,
-          padding: '1px',
+          padding: borderWidth,
           WebkitMask:
             'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
           WebkitMaskComposite: 'xor',

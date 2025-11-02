@@ -17,7 +17,7 @@ export const Navbar = () => {
       position='sticky'
       height={48}
       classNames={{
-        base: 'container 2xl:mx-auto top-5 self-center w-fit flex justify-between  bg-header rounded-2xl px-1.5',
+        base: 'container z-100 2xl:mx-auto top-5 self-center w-fit flex justify-between  bg-header rounded-2xl px-1.5',
         wrapper: 'p-0',
         content: 'p-0',
       }}>

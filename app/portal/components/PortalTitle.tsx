@@ -13,9 +13,9 @@ export default function PortalTitle() {
     { id: 3, name: 'Henry', img: Avatar3.src },
   ];
   return (
-    <div className='px-16 flex justify-between items-end w-full'>
+    <div className=' flex justify-between items-end w-full'>
       <div className='flex flex-col gap-4'>
-        <div className='flex gap-4 w-fit h-fit items-center mt-10'>
+        <div className='flex gap-4 w-fit h-fit items-center'>
           <p className='font-medium text-4xxl'>Running Club</p>
           <div className='flex -space-x-2'>
             {/* <AvatarCus
@@ -37,7 +37,7 @@ export default function PortalTitle() {
                         {user.name}
                       </div>
                       <div
-                        className='absolute inset-0 rounded-xs pointer-events-none'
+                        className='absolute inset-0 rounded-lg pointer-events-none'
                         style={{
                           background: 'var(--color-stroke-tooltip)',
                           padding: '1px',
@@ -53,9 +53,9 @@ export default function PortalTitle() {
                     </>
                   }
                   showArrow={true}
-                  className='bg-white/15 backdrop-blur-sm  shadow-none rounded-xs'
+                  className='bg-white/15 backdrop-blur-sm  shadow-none rounded-lg'
                   classNames={{
-                    base: ' border-none  shadow-none rounded-xs ',
+                    base: ' border-none  shadow-none rounded-lg ',
                     content: 'border-none shadow-none ',
                   }}>
                   <AvatarCus
