@@ -174,6 +174,7 @@ export default function PortalActivity() {
                   {notification.user.name} {notification.action}
                 </span>
                 <span className='dark:text-white/40 text-black/40'>
+                  {' '}
                   {notification.time}
                 </span>
               </p>
