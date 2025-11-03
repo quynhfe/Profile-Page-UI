@@ -45,8 +45,8 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className='relative flex flex-col transform transition-all duration-300 ease-in-out'>
             <Navbar />
-            <main className=' pt-16 px-14 flex-grow w-full'>
-              <div className='2xl:container 2xl:mx-auto 2xl:max-w-350'>
+            <main className=' flex-grow w-full'>
+              <div className='2xl:container 2xl:mx-auto pt-16 px-14  2xl:max-w-350'>
                 {children}
               </div>
             </main>
