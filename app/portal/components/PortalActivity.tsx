@@ -226,6 +226,19 @@ export default function PortalActivity() {
         </div>
 
         <Calendar
+          // renderCell={(date) => {
+          //   const isWeekend = date.weekday > 5;
+          //   const isSpecial = date.day === 2;
+
+          //   return (
+          //     <div className='flex flex-col items-center justify-center'>
+          //       {/* Custom text hoặc icon */}
+          //       <span className={isWeekend ? 'text-red-500' : ''}>
+          //         {isSpecial ? '💰' : date.day}
+          //       </span>
+          //     </div>
+          //   );
+          // }}
           className='flex justify-center p-4'
           aria-label='Date (firstDayOfWeek)'
           firstDayOfWeek='mon'
@@ -235,13 +248,13 @@ export default function PortalActivity() {
             prevButton: 'text-black dark:text-white',
             nextButton: 'text-black dark:text-white',
             cellButton:
-              'data-hovered:hover:bg-button-purple text-sm w-8.75 data-[selected=true]:bg-button-purple data-[outside-month=true]:text-[#868687] hover:bg-button-purple rounded-[8px]',
+              '  text-sm w-8.75 data-[selected=true]:bg-button-purple data-[outside-month=true]:text-[#868687]  dark:data-[hover=true]:bg-white/30 data-[hover=true]:bg-black/30 data-[hover=true]:text-black data-[selected=true]:data-[hover=true]:bg-button-purple/50 rounded-[8px]',
             headerWrapper: 'bg-inherit h-34.25 flex items-start p-0',
-            gridWrapper: '',
             gridHeader: 'hidden',
             grid: 'p-0',
             content: 'p-0 m-0',
             gridBody: 'p-0',
+            cell: 'w-fit',
           }}
         />
       </div>
