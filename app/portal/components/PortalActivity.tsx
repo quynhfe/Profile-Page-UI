@@ -113,17 +113,18 @@ export default function PortalActivity() {
   ];
   return (
     <div className=' mt-16.75 flex flex-col gap-5 w-full'>
-      <div className='flex flex-col overflow-hidden relative z-0 w-full gap-4 bg-white dark:bg-[#111111] h-72.75  rounded-2xl p-5  border border-border-grey dark:border-[#1F1F1F]'>
+      <div className='flex flex-col overflow-hidden relative z-0 w-full gap-4 bg-white dark:bg-[#111111] h-72.75  rounded-2xl p-5 pb-2.75  border border-border-grey dark:border-[#1F1F1F]'>
         <p className=' font-medium text-base '>Recent activity</p>
 
         <ScrollShadow
           offset={100}
+          orientation='horizontal'
           hideScrollBar
           className='relative z-0 flex flex-col w-full h-full'>
           {notifications.map((notification) => (
             <div
               key={notification.id}
-              className='flex gap-3 py-2'>
+              className='flex gap-3  h-14 justify-center items-center'>
               {notification.badgeEvent === 'rocket' ? (
                 <Badge
                   size='sm'
@@ -169,8 +170,8 @@ export default function PortalActivity() {
                   />
                 </Badge>
               )}
-              <p className='leading-[100%]'>
-                <span className='text-base leading-[100%]'>
+              <p className='leading-[100%] py-2'>
+                <span className='text-base '>
                   {notification.user.name} {notification.action}
                 </span>
                 <span className='dark:text-white/40 text-black/40'>
@@ -214,27 +215,13 @@ export default function PortalActivity() {
             </button>
           </div>
           <div className='flex h-8.75 w-full justify-center items-center'>
-            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
-              Mo
-            </p>
-            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
-              Tu
-            </p>
-            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
-              We
-            </p>
-            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
-              Th
-            </p>
-            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
-              Fr
-            </p>
-            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
-              Sat
-            </p>
-            <p className='size-8.75 flex justify-center items-center font-medium text-sm'>
-              Su
-            </p>
+            {['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sat', 'Su'].map((day) => (
+              <p
+                key={day}
+                className='size-8.75 flex justify-center items-center font-medium text-sm'>
+                {day}
+              </p>
+            ))}
           </div>
         </div>
 
@@ -248,7 +235,7 @@ export default function PortalActivity() {
             prevButton: 'text-black dark:text-white',
             nextButton: 'text-black dark:text-white',
             cellButton:
-              ' text-sm w-8.75 data-[selected=true]:bg-button-purple data-[outside-month=true]:text-[#868687] hover:bg-button-purple rounded-[8px]',
+              'data-hovered:hover:bg-button-purple text-sm w-8.75 data-[selected=true]:bg-button-purple data-[outside-month=true]:text-[#868687] hover:bg-button-purple rounded-[8px]',
             headerWrapper: 'bg-inherit h-34.25 flex items-start p-0',
             gridWrapper: '',
             gridHeader: 'hidden',

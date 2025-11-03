@@ -5,12 +5,10 @@ import { LogoHero } from '@/components/icons';
 import IconBox from '@/components/icon-box';
 export default function PortalBanner() {
   return (
-    <div className='relative w-full '>
-      <Image
-        className='w-full h-full object-cover'
-        src={HeroImage.src}
-        alt='background hero '></Image>
-      <div className='absolute z-10 top-39.75 left-17'>
+    <div
+      className='relative w-full h-62.75 bg-cover bg-center rounded-[20px]'
+      style={{ backgroundImage: `url(${HeroImage.src})` }}>
+      <div className='transfrom translate-y-39.75 translate-x-17'>
         <Badge
           isOneChar
           content={<div className='size-6 bg-icon-notify rounded-2xl'></div>}

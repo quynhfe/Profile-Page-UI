@@ -43,7 +43,7 @@ export default function RootLayout({
           fontPlus.variable,
         )}>
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-          <div className='relative flex flex-col h-screen transform transition-all duration-300 ease-in-out'>
+          <div className='relative flex flex-col transform transition-all duration-300 ease-in-out'>
             <Navbar />
             <main className=' pt-16 px-14 flex-grow w-full'>
               <div className='2xl:container 2xl:mx-auto 2xl:max-w-350'>

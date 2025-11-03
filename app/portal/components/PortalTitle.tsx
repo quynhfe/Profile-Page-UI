@@ -18,16 +18,6 @@ export default function PortalTitle() {
         <div className='flex gap-4 w-fit h-fit items-center'>
           <p className='font-medium text-4xxl'>Running Club</p>
           <div className='flex -space-x-2'>
-            {/* <AvatarCus
-              radius='sm'
-              border='user'
-              src={Avatar2.src}
-              className='size-8 '></AvatarCus>
-            <AvatarCus
-              radius='sm'
-              border='user'
-              src={Avatar3.src}
-              className='size-8 '></AvatarCus> */}
             {users.map((user) => (
               <div key={user.id}>
                 <Tooltip
