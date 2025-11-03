@@ -33,12 +33,9 @@ export default function Card({
     <div
       className={`bg-inherit relative z-0 h-51.25 w-52.5 rounded-2xl  ${className}`}>
       <div className='absolute -z-10 transform -translate-y-2 left-2.5 -rotate-2'>
-        <GradientBorder
-          variant='dark'
-          rounded='rounded-2xl'
-          className='hidden dark:block'>
-          <div className='bg-header w-46.75 h-30 rounded-2xl'></div>
-        </GradientBorder>
+        <div className='hidden dark:flex justify-center items-center w-fit h-fit p-0.25 bg-gradient-to-br from-[#3E3E3E] to-[#2D2C2F00] rounded-2xl'>
+          <div className='bg-[#111111] w-46.75 h-30 rounded-2xl'></div>
+        </div>
         <div className='bg-bg-card block dark:hidden w-46.75 h-30 rounded-2xl'></div>
       </div>
 
